@@ -10,7 +10,7 @@ This Python script is designed to scrape data from a website containing books in
 - pandas library
 
 ## Installation
-1. Ensure you have Python 3.x installed on your system. If not, download it from the official Python website (https://www.python.org/downloads/) and install it.
+1. Ensure you have Python 3.x installed on your system. If not, download it from the official [Python website](https://www.python.org/downloads/) and install it.
 2. Install the required libraries by running the following commands in your terminal or command prompt:
 ```
 pip install requests
