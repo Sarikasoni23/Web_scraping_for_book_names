@@ -1,37 +1,58 @@
-**Title: Web Scraping Books and Creating DataFrame**
+# Book Web Scraping & Data Extraction
 
-## Introduction
-This Python script is designed to scrape data from a website containing books in the "Mystery" category and create a DataFrame for further manipulation and preprocessing. It utilizes the `requests`, `BeautifulSoup`, and `pandas` libraries for web scraping and data manipulation.
+A Python data-extraction project that scrapes book information from **Books to Scrape** and structures the collected data with Pandas.
 
-## Requirements
-- Python 3.x
-- requests library
-- BeautifulSoup library
-- pandas library
+## Overview
+
+The script requests catalogue pages, parses HTML using BeautifulSoup, extracts product information, and stores the collected records in a Pandas DataFrame.
+
+## Tech Stack
+
+- Python 3
+- Requests
+- BeautifulSoup
+- Pandas
+
+## Extracted Fields
+
+The current script collects:
+
+- Book title
+- Price
+- Star-rating class
+
+It iterates across multiple catalogue pages to build a structured dataset.
 
 ## Installation
-1. Ensure you have Python 3.x installed on your system. If not, download it from the official [Python website](https://www.python.org/downloads/) and install it.
-2. Install the required libraries by running the following commands in your terminal or command prompt:
-```
-pip install requests
-pip install beautifulsoup4
-pip install pandas
+
+```bash
+pip install requests beautifulsoup4 pandas
 ```
 
-## How to Use
-1. Clone or download the script from the GitHub repository (provide GitHub repository link here).
-2. Open the script using your favorite Python IDE or text editor.
-3. Modify the `url` variable in the script to point to the starting page of the "Mystery" books category you want to scrape.
-4. Run the script. It will scrape data from multiple pages of the category and store it in a DataFrame.
-5. The resulting DataFrame will contain information about book titles, prices, and star ratings.
+## Run
 
-## Usage Example
-```sh
+```bash
 python main.py
 ```
 
-## Output
-The script will produce a DataFrame containing information about the books in the "Mystery" category, including book titles, prices, and star ratings.
+## How It Works
 
+1. Sends HTTP requests to catalogue pages.
+2. Parses the HTML with BeautifulSoup.
+3. Finds each book card in the page.
+4. Extracts title, price, and rating information.
+5. Appends the records to a Python list.
+6. Converts the collection into a Pandas DataFrame.
 
-Feel free to use and modify this script as per your requirements. If you encounter any issues or have suggestions for improvements, please don't hesitate to create an issue or pull request on the GitHub repository. Happy scraping and data analysis!
+## Current Scope
+
+This repository demonstrates the extraction and DataFrame-building stage of a data pipeline. The current implementation does not yet persist the DataFrame to a database or file.
+
+## Suggested Next Improvements
+
+- Add request timeout and error handling
+- Export results to CSV/JSON
+- Persist records to MySQL/PostgreSQL
+- Add duplicate handling and validation
+- Add command-line arguments for category/page range
+- Add automated tests
